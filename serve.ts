@@ -11,8 +11,8 @@ const statement = Deno.env.get("文章");
 function getOmikuji() {
   const result = sample(omikujis) ?? "おみくじが空でした。"; //length===0
   return `<h1>${
-    statement?.includes("%OMIKUJI%")
-      ? statement.replaceAll("%OMIKUJI%", result)
+    statement?.includes("%おみくじ%")
+      ? statement.replaceAll("%おみくじ%", result)
       : result
   }</h1>`;
 }
