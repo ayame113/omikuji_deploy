@@ -7,3 +7,7 @@ deno deployでおみくじを公開しましょう。
 上のリンクをクリックして、おみくじをデプロイします。
 
 ![screenshot](./screenshot/deploy.png)
+
+サンプルはこちら↓
+
+https://omikuji-up.deno.dev/
