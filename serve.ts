@@ -6,13 +6,13 @@ const omikujis = [
   Deno.env.get("OMIKUJI_3"),
   Deno.env.get("OMIKUJI_4"),
 ].filter((v) => v);
-const statement = Deno.env.get("STATEMENT");
+const sentence = Deno.env.get("SENTENCE");
 
 function getOmikuji() {
   const result = sample(omikujis) ?? "おみくじが空でした。"; //length===0
   return `<h1>${
-    statement?.includes("%OMIKUJI%")
-      ? statement.replaceAll("%OMIKUJI%", result)
+    sentence?.includes("%OMIKUJI%")
+      ? sentence.replaceAll("%OMIKUJI%", result)
       : result
   }</h1>`;
 }
