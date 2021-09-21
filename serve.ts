@@ -1,16 +1,16 @@
 import { sample } from "https://deno.land/std@0.107.0/collections/sample.ts";
 
-const omikujis = ([
+const omikujis = [
   Deno.env.get("おみくじ1"),
   Deno.env.get("おみくじ2"),
   Deno.env.get("おみくじ3"),
   Deno.env.get("おみくじ4"),
-].filter((v) => v) as string[]).map(escapeHTML);
-const sentence = Deno.env.get("文章");
+].filter((v) => v).map(escapeHTML);
+const sentence = escapeHTML(Deno.env.get("文章"));
 
-function escapeHTML(str: string) {
+function escapeHTML(str?: string) {
   return str
-    .replaceAll("&", "&amp;")
+    ?.replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
