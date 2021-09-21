@@ -14,7 +14,8 @@ function getOmikuji() {
     sentence?.includes("%おみくじ%")
       ? sentence.replaceAll("%おみくじ%", result)
       : result
-  }</h1>`;
+  }</h1>
+  このおみくじは<a href="https://github.com/ayame113/omikuji_deploy">https://github.com/ayame113/omikuji_deploy</a>から作成されました。`;
 }
 
 async function handleHttp(conn: Deno.Conn) {
