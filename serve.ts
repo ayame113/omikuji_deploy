@@ -1,4 +1,4 @@
-import { sample } from "https://deno.land/std@0.107.0/collections/mod.ts";
+import { sample } from "https://deno.land/std@0.107.0/collections/sample.ts";
 
 const omikujis = [
   Deno.env.get("おみくじ1"),
