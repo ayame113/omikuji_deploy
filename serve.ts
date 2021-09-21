@@ -1,4 +1,4 @@
-import { sample } from "https://deno.land/std@0.107.0/collections/sample.ts";
+/*import { sample } from "https://deno.land/std@0.107.0/collections/sample.ts";
 
 const omikujis = [
   Deno.env.get("OMIKUJI_1"),
@@ -15,11 +15,11 @@ function getOmikuji() {
       ? sentence.replaceAll("%OMIKUJI%", result)
       : result
   }</h1>`;
-}
+}*/
 
 async function handleHttp(conn: Deno.Conn) {
   for await (const event of Deno.serveHttp(conn)) {
-    if (new URL(event.request.url).pathname === "/") {
+    /*if (new URL(event.request.url).pathname === "/") {
       event.respondWith(
         new Response(getOmikuji(), {
           status: 200,
@@ -27,7 +27,7 @@ async function handleHttp(conn: Deno.Conn) {
         }),
       );
       return;
-    }
+    }*/
     event.respondWith(
       new Response('404 Not Found <a href="/">top</a>', {
         status: 404,
