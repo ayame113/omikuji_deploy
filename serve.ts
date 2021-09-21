@@ -9,7 +9,7 @@ const omikujis = [
 const sentence = Deno.env.get("SENTENCE");
 
 function getOmikuji() {
-  const result = sample(omikujis) ?? "おみくじが空でした。"; //length===0
+  const result = sample(omikujis) ?? "omikuij was empty."; //length===0
   return `<h1>${
     sentence?.includes("%OMIKUJI%")
       ? sentence.replaceAll("%OMIKUJI%", result)
