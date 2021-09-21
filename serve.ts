@@ -1,18 +1,18 @@
 import { sample } from "https://deno.land/std@0.107.0/collections/sample.ts";
 
 const omikujis = [
-  Deno.env.get("おみくじ1"),
-  Deno.env.get("おみくじ2"),
-  Deno.env.get("おみくじ3"),
-  Deno.env.get("おみくじ4"),
+  Deno.env.get("OMIKUJI_1"),
+  Deno.env.get("OMIKUJI_2"),
+  Deno.env.get("OMIKUJI_3"),
+  Deno.env.get("OMIKUJI_4"),
 ].filter((v) => v);
-const statement = Deno.env.get("文章");
+const statement = Deno.env.get("STATEMENT");
 
 function getOmikuji() {
   const result = sample(omikujis) ?? "おみくじが空でした。"; //length===0
   return `<h1>${
-    statement?.includes("%おみくじ%")
-      ? statement.replaceAll("%おみくじ%", result)
+    statement?.includes("%OMIKUJI%")
+      ? statement.replaceAll("%OMIKUJI%", result)
       : result
   }</h1>`;
 }
