@@ -32,6 +32,9 @@ function getOmikuji() {
   このおみくじは<a href="https://github.com/ayame113/omikuji_deploy">https://github.com/ayame113/omikuji_deploy</a>から作成されました。`;
 }
 
+function escapeHTML(str: string): string;
+function escapeHTML(str: undefined): undefined;
+function escapeHTML(str: string | undefined): string | undefined;
 function escapeHTML(str?: string) {
   return str
     ?.replaceAll("&", "&amp;")
